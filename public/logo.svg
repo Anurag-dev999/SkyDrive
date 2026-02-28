@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">SkyDrive Logo</title>
+  <desc id="desc">A rounded blue square with a white cloud and upward arrow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="16" y1="10" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60A5FA"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="20" y1="14" x2="96" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <path d="M31 28c18-8 44-3 58 13c8 9 10 21 8 33c-8-19-29-30-52-28c-5 0-10 1-15 3z" fill="url(#shine)"/>
+  <path d="M38 78c-8 0-14-5-14-13s6-14 14-14c2 0 4 0 6 1c3-10 12-17 24-17c14 0 25 10 26 24c7 1 12 7 12 14c0 8-6 15-14 15H38z" fill="#FFFFFF"/>
+  <path d="M64 85c-1 0-2 0-3-1c-1-2-1-4 0-5l10-11c2-1 4-1 6 0c1 2 1 4 0 6L67 84c-1 1-2 1-3 1z" fill="#1D4ED8"/>
+  <path d="M56 75c-1-1-1-3 0-4l8-8l8 8c1 1 1 3 0 4c-1 2-3 2-4 0l-4-4l-4 4c-1 2-3 2-4 0z" fill="#1D4ED8"/>
+</svg>
