@@ -125,6 +125,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           name: profile?.name || session.user.email?.split('@')[0] || 'User',
           avatar: profile?.avatar_url,
         })
+
+        // Bug 2 fix: seed the file list immediately after login so the
+        // user never sees an empty drive on first load.
+        await fetchFiles(session.user.id)
       } else {
         setUser(null)
         setFiles([])
@@ -214,7 +218,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setSearchQuery('')
     setActiveSection('my-files')
     setLoading(false)
-  }, [supabase])
+  // Bug 3 fix: supabase is a module-level singleton, not a reactive dep.
+  }, [])
 
   /**
    * Orchestrates the multi-step upload process:
@@ -378,7 +383,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       // Execute all uploads in parallel
       await Promise.all(fileArray.map((file, index) => uploadSingleFile(file, newUploads[index])))
     },
-    [user, supabase]
+    // Bug 1 fix: supabase is a module-level singleton — removing it from
+    // the dep array prevents stale closures that could capture user=null.
+    [user]
   )
 
   /**
